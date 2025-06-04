@@ -1,12 +1,12 @@
 <template>
   <div>
-    <Navbar />
-    <Sidebar />
-    <div class="p-4 sm:ml-64">
-   <div class="p-4 mt-14 w-full">
-      <router-view />
-   </div>
-</div>
+      <Navbar />
+      <Sidebar />
+      <div class="p-4 bg-gray-50 h-screen sm:ml-64">
+        <div class="p-4 mt-14">
+          <router-view />
+        </div>
+      </div>
   </div>
 </template>
 

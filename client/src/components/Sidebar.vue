@@ -9,7 +9,7 @@
       <ul v-for="(item, index) in sidebarItems" :key="index" class="space-y-2 font-medium">
          <li>
             <router-link :to="item.path" class="flex items-center p-2 text-gray-700 rounded-lg hover:bg-gray-100 hover:text-gray-900 group">
-               <icon :class="item.icon"/>
+               <i :class="item.icon"/>
                <span class="ms-3">{{ item.title || 'Dashboard' }}</span>
             </router-link> 
          </li>

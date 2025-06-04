@@ -43,3 +43,4 @@
 /Users/hassatorn1989/Desktop/jo/dotnet/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/hassatorn1989/Desktop/jo/dotnet/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
 /Users/hassatorn1989/Desktop/jo/dotnet/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/hassatorn1989/Desktop/jo/dotnet/obj/Debug/net9.0/dotnet.sourcelink.json

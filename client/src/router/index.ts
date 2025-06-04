@@ -1,11 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
-// import Home from '../page/Home.vue';
-import Layout from '../layout/Layout.vue';
 import axios from 'axios';
 const routes = [
   {
     path: '/',
-    component: Layout,
+    component: () => import('../layout/Layout.vue'),
     children: [
       {
         path: '',
@@ -17,8 +15,14 @@ const routes = [
         path: 'categories',
         name: 'Categories',
         component: () => import('../page/Categories.vue'),
-        meta : { requiresAuth: true }
+        meta : { requiresAuth: true },
       },
+      {
+        path: 'add-categories',
+        name: 'AddCategory',
+        component: () => import('../page/AddCategories.vue'),
+        meta : { requiresAuth: true }
+      }
     ],
   },
   {
@@ -55,11 +59,9 @@ async function isAuthenticated(): Promise<boolean> {
 router.beforeEach(async (to, _, next) => {
   const isAuth = await isAuthenticated()
   if (to.matched.some(record => record.meta.requiresAuth) && !isAuth) {
-    console.log('Not authenticated, redirecting to login');
     next({ name: 'Login' });
   }
   else {
-    console.log('Authenticated, proceeding to route');
     next();
   }
 });
