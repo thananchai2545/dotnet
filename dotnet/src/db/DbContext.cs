@@ -9,9 +9,11 @@ public class MyDbContext : DbContext
     }
 
     public DbSet<User> Users { get; set; } = null!;
-
+    public DbSet<Categories> Categories { get; set; } = null!;
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<User>();
+        modelBuilder.Entity<Categories>();
+            
     }
 }
