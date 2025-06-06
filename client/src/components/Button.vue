@@ -13,6 +13,24 @@ const props = defineProps({
   disabled: {
     type: Boolean,
     default: false
+  },
+  size: {
+    type: String,
+    default: 'md', // small, medium, large
+    validator: (val) => ['sm', 'md', 'lg'].includes(val)
+  }
+})
+
+const size = computed(() => {
+  switch (props.size) {
+    case 'sm':
+      return 'text-sm py-1 px-3'
+    case 'md':
+      return 'text-base py-1.5 px-4'
+    case 'lg':
+      return 'text-lg py-2 px-4'
+    default:
+      return ''
   }
 })
 
@@ -36,9 +54,13 @@ const variantClasses = computed(() => {
   <button
     :type="type"
     :class="[
-      'px-4 py-2 rounded font-medium transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-md',
+      'rounded font-medium transition duration-200 rounded-lg',
       variantClasses,
-      { 'opacity-50 cursor-not-allowed': disabled }
+      size,
+      { 'opacity-50 cursor-not-allowed': disabled },
+      'flex items-center justify-center',
+      $attrs.class,
+
     ]"
     :disabled="disabled"
   >

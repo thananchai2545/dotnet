@@ -24,6 +24,7 @@ async function addCategoty(e) {
     e.preventDefault();    
     v$.value.$touch();
     if (v$.value.$invalid) {
+        document.querySelector('#name').className += ' border-red-500';
         return;
     }
     const apiUrl = import.meta.env.VITE_API_URL;
@@ -77,7 +78,7 @@ async function addCategoty(e) {
                                   class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" placeholder="ระบุรายละเอียด..."></textarea>
                     </div>
                     <div class="flex items-center justify-end">
-                        <Button type="submit" variant="success"><i class="fas fa-save mr-1"></i> บันทึก</Button>
+                        <Button size="lg" type="submit" variant="success"><i class="fas fa-save mr-1"></i> บันทึก</Button>
                     </div>
                 </form> 
             </div>

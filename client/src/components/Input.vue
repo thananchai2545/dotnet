@@ -31,7 +31,7 @@ import { defineProps ,defineEmits } from 'vue';
                :type="type" 
                :id="id" 
                name="categoryName"
-               class="mt-1 block w-full bg-white p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" 
+               class="h-full w-full block bg-white p-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" 
                 :placeholder="placeholder"
                />
     </div>
